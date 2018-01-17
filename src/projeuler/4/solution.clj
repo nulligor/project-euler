@@ -22,5 +22,4 @@
   (apply max 
     (filter ispalindromic? (sort (set (flatten 
         (map (fn [x] 
-            (map (partial * x) (build-rng 3))) (build-rng 3)))))))
-)
+            (map (partial * x) (build-rng 3))) (build-rng 3))))))))
