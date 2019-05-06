@@ -9,6 +9,5 @@
         (recur (inc f) n))
       [])))
 
-(defn run 
-  []
+(defn run []
   (apply max (prime-factors-of 600851475143)))
