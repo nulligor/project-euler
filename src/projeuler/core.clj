@@ -5,17 +5,20 @@
             [projeuler.4.solution :as p4]
             [projeuler.5.solution :as p5]
             [projeuler.6.solution :as p6]
-            [projeuler.7.solution :as p7])
+            [projeuler.7.solution :as p7]
+            [projeuler.8.solution :as p8])
   (:gen-class))
 
-(def problem-map
-  [{:problem (p1/run) :index 1} {:problem (p2/run) :index 2}
-   {:problem (p3/run) :index 3} {:problem (p4/run) :index 4}
-   {:problem (p5/run) :index 5} {:problem (p6/run) :index 6}
-   {:problem (p7/run) :index 7}])
+(def problems
+  [{:prob (p1/run) :id 1}
+   {:prob (p2/run) :id 2}
+   {:prob (p3/run) :id 3}
+   {:prob (p4/run) :id 4}
+   {:prob (p5/run) :id 5}
+   {:prob (p6/run) :id 6}
+   {:prob (p7/run) :id 7}
+   {:prob (p8/run) :id 8}])
 
 (defn -main []
-  (println "--------------------------------------------------")
   (println "Project Euler Solutions")
-  (println "--------------------------------------------------")
-  (dorun (map #(println (:index %) "-" (:problem %)) problem-map)))
+  (dorun (map #(println (:id %) "-" (:prob %)) problems)))

@@ -1,23 +1,19 @@
 (ns projeuler.4.solution)
 
-(defn delimiter
-  [n]
-  (+ 1 (read-string (apply str (take-last n (conj (repeat n 9) 9))))))
+(defn delimiter [n]
+  (inc (read-string (apply str (take-last n (conj (repeat n 9) 9))))))
 
-(defn build-range
-  [n]
-  (let [ beg  (delimiter (- n 1))
-         end  (delimiter n)]
+(defn build-range [n]
+  (let [beg  (delimiter (- n 1))
+        end  (delimiter n)]
   (into [] (range beg end))))
 
 (def f-sort  (comp sort set flatten))
 
-(defn ispalindromic?
-  [x]
+(defn ispalindromic? [x]
   (= x (Integer. (clojure.string/reverse (str x)))))
 
-(defn run
-  []
+(defn run []
   (apply max
     (filter ispalindromic?
       (f-sort

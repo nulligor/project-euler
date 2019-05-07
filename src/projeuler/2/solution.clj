@@ -1,12 +1,8 @@
-(ns projeuler.2.solution)
-
-(defn fib
-  ([] (fib 0 1))
-  ([a b]
-    (lazy-seq (cons a (fib b (+ b a))))))
+(ns projeuler.2.solution
+  (:require [projeuler.utils :as utils]))
 
 (defn even-fibonaccis-below [n]
-  (take-while (partial >= n) (take-nth 3 (fib))))
+  (take-while (partial >= n) (take-nth 3 (utils/fib))))
 
 (defn sum-of-even-fibonaccis-below [n]
   (reduce + (even-fibonaccis-below n)))

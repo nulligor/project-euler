@@ -1,6 +1,6 @@
 # Project Euler - Clojure
 
-[Project Euler](https://projecteuler.net/) solutions in Clojure [WIP]
+[Project Euler](https://projecteuler.net/) solutions in Clojure
 
 ## Installation
 
