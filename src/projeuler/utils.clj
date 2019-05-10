@@ -28,5 +28,13 @@
   ([a b]
     (lazy-seq (cons a (fib b (+ b a))))))
 
+(defn tri*
+  ([] (tri* 0 1))
+  ([sum n]
+     (let [new-sum (+ sum n)]
+       (cons new-sum (lazy-seq (tri* new-sum (inc n)))))))
+
+(def tri (tri*))
+
 (defn exp [x pow]
   (apply * (repeat pow x)))
