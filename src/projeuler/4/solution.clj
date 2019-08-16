@@ -6,7 +6,7 @@
 (defn build-range [n]
   (let [beg  (delimiter (- n 1))
         end  (delimiter n)]
-  (into [] (range beg end))))
+    (into [] (range beg end))))
 
 (def f-sort  (comp sort set flatten))
 
@@ -15,8 +15,8 @@
 
 (defn run []
   (apply max
-    (filter ispalindromic?
-      (f-sort
-        (map
-          (fn [x] (map (partial * x) (build-range 3)))
-          (build-range 3))))))
+         (filter ispalindromic?
+                 (f-sort
+                  (map
+                   (fn [x] (map (partial * x) (build-range 3)))
+                   (build-range 3))))))
