@@ -8,7 +8,8 @@
             [projeuler.7.solution :as p7]
             [projeuler.8.solution :as p8]
             [projeuler.9.solution :as p9]
-            [projeuler.10.solution :as p10])
+            [projeuler.10.solution :as p10]
+            [projeuler.11.solution :as p11])
   (:gen-class))
 
 (def problems
@@ -21,7 +22,8 @@
    {:prob (p7/run) :id 7}
    {:prob (p8/run) :id 8}
    {:prob (p9/run) :id 9}
-   {:prob (p10/run) :id 10}])
+   {:prob (p10/run) :id 10}
+   {:prob (p11/run) :id 11}])
 
 (defn -main []
   (println "Project Euler Solutions")
