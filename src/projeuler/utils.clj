@@ -41,3 +41,12 @@
 
 (defn num-divisors-of [n]
   (reduce * (map #(inc (second %)) (into [] (frequencies (prime-factors-of n))))))
+
+(defn split-number [n]
+  (map
+    int
+    (loop [result (list), n n]
+      (if (pos? n)
+        (recur (conj result (rem n 10))
+               (quot n 10))
+        result))))
