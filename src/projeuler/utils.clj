@@ -44,9 +44,9 @@
 
 (defn split-number [n]
   (map
-    int
-    (loop [result (list), n n]
-      (if (pos? n)
-        (recur (conj result (rem n 10))
-               (quot n 10))
-        result))))
+   int
+   (loop [result (list), n n]
+     (if (pos? n)
+       (recur (conj result (rem n 10))
+              (quot n 10))
+       result))))
