@@ -38,8 +38,7 @@
 
 (defn reduce-each [xy]
   (let [coords (map vec (ops xy))
-        neighbors (map (fn [_]
-                         (map #(get-in GRID %) _)) coords)]
+        neighbors (map (fn [_] (map #(get-in GRID %) _)) coords)]
     (map #(apply * %) (filter #(= (count %) 4) neighbors))))
 
 (defn run []

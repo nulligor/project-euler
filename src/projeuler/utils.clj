@@ -38,3 +38,6 @@
 
 (defn exp [x pow]
   (apply * (repeat pow x)))
+
+(defn num-divisors-of [n]
+  (reduce * (map #(inc (second %)) (into [] (frequencies (prime-factors-of n))))))
