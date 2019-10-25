@@ -1,6 +1,6 @@
 (ns projeuler.11.solution)
 
-(def GRID
+(def ^:const grid
   [[8   2   22  97  38  15  0   40  0   75  4   5   7   78  52  12  50  77  91  8]
    [49  49  99  40  17  81  18  57  60  87  17  40  98  43  69  48  4   56  62  0]
    [81  49  31  73  55  79  14  29  93  71  40  67  53  88  30  3   49  13  36  65]
@@ -22,28 +22,28 @@
    [20  73  35  29  78  31  90  1   74  31  49  71  48  86  81  16  23  57  5   54]
    [1   70  54  71  83  51  54  69  16  92  33  48  61  43  52  1   89  19  67  48]])
 
-(def SIZE (count GRID))
+(def ^:const size (count grid))
 
 (defn neighbors [size deltas yx]
   (filter
    (fn [new-yx] (every? #(< -1 % size) new-yx))
    (map #(vec (map + yx %)) deltas)))
 
-(def right (partial neighbors SIZE [[0 0] [0 1] [0 2] [0 3]]))
-(def down  (partial neighbors SIZE [[0 0] [1 0] [2 0] [3 0]]))
-(def diag (partial neighbors SIZE [[0 0] [1 1] [2 2] [3 3]]))
-(def diag2 (partial neighbors SIZE [[0 0] [1 -1] [2 -2] [3 -3]]))
+(def right (partial neighbors size [[0 0] [0 1] [0 2] [0 3]]))
+(def down  (partial neighbors size [[0 0] [1 0] [2 0] [3 0]]))
+(def diag (partial neighbors size [[0 0] [1 1] [2 2] [3 3]]))
+(def diag2 (partial neighbors size [[0 0] [1 -1] [2 -2] [3 -3]]))
 
 (def ops (juxt right down diag diag2))
 
 (defn reduce-each [xy]
   (let [coords (map vec (ops xy))
-        neighbors (map (fn [_] (map #(get-in GRID %) _)) coords)]
+        neighbors (map (fn [_] (map #(get-in grid %) _)) coords)]
     (map #(apply * %) (filter #(= (count %) 4) neighbors))))
 
 (defn run []
-  (let [coords (for [x (vec (range SIZE))
-                     y (vec (range SIZE))]
+  (let [coords (for [x (vec (range size))
+                     y (vec (range size))]
                  (vector x y))]
     (apply max
            (flatten (map reduce-each coords)))))

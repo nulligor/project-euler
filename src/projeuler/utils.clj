@@ -1,18 +1,19 @@
 (ns projeuler.utils)
 
 (def primes
-  (concat
-   [2]
-   (lazy-seq
-    (let [prime-inner
-          (fn prime-inner [x table]
-            (if (table x)
-              (prime-inner (inc x)
-                           (reduce #(update % (+ x %2) conj %2)
-                                   (dissoc table x)
-                                   (table x)))
-              (lazy-seq (cons x (prime-inner (inc x) (assoc table (* x x) [x]))))))]
-      (prime-inner 3 {4 [2]})))))
+  (let [primes-inner (atom [2N])]
+    (iterate
+     #(let [ps @primes-inner]
+        (loop [n (inc %)]
+          (if (loop [i 0]
+                (let [p (nth ps i)]
+                  (cond
+                    (< n (* p p)) true
+                    (zero? (mod n p)) false
+                    :else (recur (inc i)))))
+            (do (swap! primes-inner conj n) n)
+            (recur (inc n)))))
+     (first @primes-inner))))
 
 (defn prime-factors-of
   ([n] (prime-factors-of 2 n))
@@ -33,20 +34,17 @@
   ([sum n]
    (let [new-sum (+ sum n)]
      (cons new-sum (lazy-seq (tri* new-sum (inc n)))))))
-
 (def tri (tri*))
 
-(defn exp [x pow]
-  (apply * (repeat pow x)))
-
 (defn num-divisors-of [n]
-  (reduce * (map #(inc (second %)) (into [] (frequencies (prime-factors-of n))))))
+  (reduce * (map #(inc (second %))
+                 (into [] (frequencies (prime-factors-of n))))))
+
+(defn factorial [^long n] (reduce * (bigint 1) (range 1 (inc n))))
 
 (defn split-number [n]
-  (map
-   int
-   (loop [result (list), n n]
-     (if (pos? n)
-       (recur (conj result (rem n 10))
-              (quot n 10))
-       result))))
+  (map int (loop [result (list), n n]
+             (if (pos? n)
+               (recur (conj result (rem n 10))
+                      (quot n 10))
+               result))))

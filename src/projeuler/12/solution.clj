@@ -2,5 +2,7 @@
   (:require [projeuler.utils :as utils]))
 
 (defn run []
-  (first (filter #(>= (utils/num-divisors-of %) 500) (take 15000 utils/tri))))
+  (first
+   (filter #(>= (utils/num-divisors-of %) 500)
+           (take 15000 utils/tri))))
 

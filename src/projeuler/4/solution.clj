@@ -1,22 +1,14 @@
-(ns projeuler.4.solution)
+(ns projeuler.4.solution
+  (:require [clojure.string :as s]))
 
-(defn delimiter [n]
-  (inc (read-string (apply str (take-last n (conj (repeat n 9) 9))))))
+(defn palindromic [n] (= n (Integer. (s/reverse (str n)))))
 
-(defn build-range [n]
-  (let [beg  (delimiter (- n 1))
-        end  (delimiter n)]
-    (into [] (range beg end))))
+(def ^:const rng (range 1000))
 
 (def f-sort  (comp sort set flatten))
 
-(defn ispalindromic? [x]
-  (= x (Integer. (clojure.string/reverse (str x)))))
-
 (defn run []
-  (apply max
-         (filter ispalindromic?
-                 (f-sort
-                  (map
-                   (fn [x] (map (partial * x) (build-range 3)))
-                   (build-range 3))))))
+  (->>
+   (f-sort  (map (fn [n] (map (partial * n) rng)) rng))
+   (filter palindromic)
+   (apply max)))

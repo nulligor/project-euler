@@ -1,13 +1,11 @@
 (ns projeuler.6.solution
-  (:require [projeuler.utils :as utils]))
+  (:use [clojure.math.numeric-tower :only [expt]]))
 
-(def rng (range 1 101))
+(def ^:const rng (range 1 101))
 
-(defn square-sum [rng]
-  (utils/exp (reduce + rng) 2))
+(defn square-sum [rng] (expt (reduce + rng) 2))
 
-(defn sum-square [rng]
-  (apply + (map #(utils/exp % 2) rng)))
+(defn sum-square [rng] (apply + (map #(expt % 2) rng)))
 
 (defn run []
   (- (square-sum rng) (sum-square rng)))

@@ -1,11 +1,10 @@
 (ns projeuler.2.solution
   (:require [projeuler.utils :as utils]))
 
+(def ^:const number 4000000)
+
 (defn even-fibonaccis-below [n]
   (take-while (partial >= n) (take-nth 3 (utils/fib))))
 
-(defn sum-of-even-fibonaccis-below [n]
-  (reduce + (even-fibonaccis-below n)))
-
 (defn run []
-  (sum-of-even-fibonaccis-below 4000000))
+  (reduce + (even-fibonaccis-below number)))
