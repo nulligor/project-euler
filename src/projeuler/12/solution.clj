@@ -5,4 +5,3 @@
   (first
    (filter #(>= (utils/num-divisors-of %) 500)
            (take 15000 utils/tri))))
-

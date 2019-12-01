@@ -15,4 +15,3 @@
 
 (defn run []
   (count (filter #(= 7 (t/day-of-week %)) (take (count m*) m*))))
-
