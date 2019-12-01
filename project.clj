@@ -6,6 +6,7 @@
   :plugins [[lein-cljfmt "0.6.3"]]
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/math.numeric-tower "0.0.4"]
+                 [clj-time/clj-time "0.15.2"]
                  [com.gfredericks/forty-two "1.0.0"]]
   :jvm-opts ["-Xmx2G"]
   :main ^:skip-aot projeuler.core

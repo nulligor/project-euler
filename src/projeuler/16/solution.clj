@@ -5,4 +5,5 @@
 (def ^:const base 2)
 (def ^:const power 1000)
 
-(defn run [] (reduce + (utils/split-number (expt base power))))
+(defn run []
+  (reduce + (utils/split-number (expt base power))))

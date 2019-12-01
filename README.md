@@ -9,8 +9,6 @@ Download Leiningen from https://leiningen.org/
 ### Usage
     $ lein run
 
-[![asciicast](https://asciinema.org/a/nih4eBps8To2BLEb4xSQSxGUT.svg)](https://asciinema.org/a/nih4eBps8To2BLEb4xSQSxGUT)
-
 ## Progress (1 - 25)
   - [1](https://projecteuler.net/problem=1) :heavy_check_mark:
   - [2](https://projecteuler.net/problem=2) :heavy_check_mark:
@@ -29,14 +27,14 @@ Download Leiningen from https://leiningen.org/
   - [15](https://projecteuler.net/problem=15) :heavy_check_mark:
   - [16](https://projecteuler.net/problem=16) :heavy_check_mark:
   - [17](https://projecteuler.net/problem=17) :heavy_check_mark:
-  - [18](https://projecteuler.net/problem=18) :grey_question:
-  - [19](https://projecteuler.net/problem=19) :grey_question:
+  - [18](https://projecteuler.net/problem=18) :heavy_check_mark:
+  - [19](https://projecteuler.net/problem=19) :heavy_check_mark:
   - [20](https://projecteuler.net/problem=20) :heavy_check_mark:
-  - [21](https://projecteuler.net/problem=21) :grey_question:
-  - [22](https://projecteuler.net/problem=22) :grey_question:
-  - [23](https://projecteuler.net/problem=23) :grey_question:
-  - [24](https://projecteuler.net/problem=24) :grey_question:
-  - [25](https://projecteuler.net/problem=25) :grey_question:
+  - [21](https://projecteuler.net/problem=21) :question:
+  - [22](https://projecteuler.net/problem=22) :question:
+  - [23](https://projecteuler.net/problem=23) :question:
+  - [24](https://projecteuler.net/problem=24) :question:
+  - [25](https://projecteuler.net/problem=25) :question:
 
 ## License
 [MIT](LICENSE)
