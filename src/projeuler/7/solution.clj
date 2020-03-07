@@ -1,4 +1,7 @@
 (ns projeuler.7.solution
   (:require [projeuler.utils :as utils]))
 
-(defn run [] (last (take 10001 utils/primes)))
+(def ^:const ^long size 10001)
+
+(defn run []
+  (last (take size utils/primes)))

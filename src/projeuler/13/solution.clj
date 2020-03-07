@@ -1,5 +1,6 @@
 (ns projeuler.13.solution
-  (:require [projeuler.utils :as utils]))
+  (:require [projeuler.utils :as utils]
+            [clojure.string :as s]))
 
 (def ^:const numbers
   [37107287533902102798797998220837590246510135740250
@@ -104,4 +105,4 @@
    53503534226472524250874054075591789781264330331690])
 
 (defn run []
-  (clojure.string/join "" (take 10 (utils/split-number (reduce + numbers)))))
+  (s/join "" (take 10 (utils/split-number (reduce + numbers)))))

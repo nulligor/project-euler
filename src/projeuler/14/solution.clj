@@ -1,7 +1,7 @@
 (ns projeuler.14.solution)
 
-;; NOTE: the way we do collatz here is probably a little too
-;; specific to go into the utils module
+(def rng (range 1 1000000))
+
 (def optimized-collatz
   (memoize #(if (even? %) (/ % 2) (/ (inc (* % 3)) 2))))
 
@@ -9,5 +9,5 @@
   (count (take-while #(> % 1) (iterate optimized-collatz n))))
 
 (defn run []
-  (first (->> (map #(list % (optimized-collatz-len %)) (range 1 1000000))
+  (first (->> (map #(list % (optimized-collatz-len %)) rng)
               (apply max-key second))))

@@ -1,7 +1,7 @@
 (ns projeuler.9.solution
   (:use [clojure.math.numeric-tower :only [expt]]))
 
-(def ^:const S 1000)
+(def ^:const ^long S 1000)
 
 (defn run []
   (reduce *
