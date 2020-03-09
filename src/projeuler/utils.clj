@@ -55,3 +55,6 @@
   (if (= n 1)
     []
     (filter #(= 0 (rem n %)) (range 1 n))))
+
+(defn index-of [item coll]
+  (count (take-while (partial not= item) coll)))

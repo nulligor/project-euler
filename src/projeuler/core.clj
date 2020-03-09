@@ -9,7 +9,7 @@
             [projeuler.15.solution :as p15] [projeuler.16.solution :as p16]
             [projeuler.17.solution :as p17] [projeuler.18.solution :as p18]
             [projeuler.19.solution :as p19] [projeuler.20.solution :as p20]
-            [projeuler.21.solution :as p21])
+            [projeuler.21.solution :as p21] [projeuler.22.solution :as p22])
   (:gen-class))
 
 (def problems
@@ -23,10 +23,10 @@
    {:n 15 :run (p15/run)} {:n 16 :run (p16/run)}
    {:n 17 :run (p17/run)} {:n 18 :run (p18/run)}
    {:n 19 :run (p19/run)} {:n 20 :run (p20/run)}
-   {:n 21 :run (p21/run)}])
+   {:n 21 :run (p21/run)} {:n 22 :run (p22/run)}])
 
 (defn -main []
-  (println "------------[ Project Euler Solutions (1-20)]------------")
+  (println "------------[ Project Euler Solutions ]------------")
   (do
     (run! println (pmap #(str (:n %) " - " (:run %)) problems))
     (shutdown-agents)))

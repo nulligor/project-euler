@@ -1,6 +1,6 @@
 # Project Euler
 
-[Project Euler](https://projecteuler.net/) solutions through the first 25 problems in Clojure.
+My [Project Euler](https://projecteuler.net/) solutions in Clojure.
 
 ## Installation
 
@@ -31,7 +31,7 @@ Download Leiningen from https://leiningen.org/
   - [19](https://projecteuler.net/problem=19) :heavy_check_mark:
   - [20](https://projecteuler.net/problem=20) :heavy_check_mark:
   - [21](https://projecteuler.net/problem=21) :heavy_check_mark:
-  - [22](https://projecteuler.net/problem=22) :question:
+  - [22](https://projecteuler.net/problem=22) :heavy_check_mark:
   - [23](https://projecteuler.net/problem=23) :question:
   - [24](https://projecteuler.net/problem=24) :question:
   - [25](https://projecteuler.net/problem=25) :question:
