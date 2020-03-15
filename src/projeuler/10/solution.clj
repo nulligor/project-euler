@@ -4,5 +4,4 @@
 (def ^:const ^long number 2000000)
 
 (defn run []
-  (reduce + (take-while #(< % number)
-                        utils/primes)))
+  (reduce + (take-while #(< % number) utils/primes)))

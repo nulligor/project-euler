@@ -14,5 +14,4 @@
 (def m* (time-range beg end (t/months 1)))
 
 (defn run []
-  (count (filter #(= 7 (t/day-of-week %))
-                 (take (count m*) m*))))
+  (count (filter #(= 7 (t/day-of-week %)) (take (count m*) m*))))
