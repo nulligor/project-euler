@@ -7,6 +7,7 @@
   :dependencies [[clj-time/clj-time "0.15.2"]
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/math.numeric-tower "0.0.4"]
+                 [org.clojure/math.combinatorics "0.1.6"]
                  [com.gfredericks/forty-two "1.0.0"]]
   :jvm-opts ["-Xmx2G"]
   :main ^:skip-aot projeuler.core

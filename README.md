@@ -34,7 +34,7 @@ Download Leiningen from https://leiningen.org/
     - [21](https://projecteuler.net/problem=21) :heavy_check_mark:
     - [22](https://projecteuler.net/problem=22) :heavy_check_mark:
     - [23](https://projecteuler.net/problem=23) :heavy_check_mark:
-    - [24](https://projecteuler.net/problem=24) :question:
+    - [24](https://projecteuler.net/problem=24) :heavy_check_mark:
     - [25](https://projecteuler.net/problem=25) :heavy_check_mark:
 
 ## License
